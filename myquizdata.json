@@ -156,6 +156,206 @@
 				}
 
 			]
+		},
+		{
+			"topic": "Conservation",
+			"quizquestions": [{
+					"question": "Who is the host of Blue Planet?",
+					"answers": [
+						"Danny Dyer",
+						"David Attenborough",
+						"Gary Lineker"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "Where is the 2022 United Nations Climate Change Conference (COP27) being held?",
+					"answers": [
+						"Egypt",
+						"U.S.A",
+						"Switzerland"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "How many hectares of primary (old growth) forest are lost each year around the world?",
+					"answers": [
+						"Two Million",
+						"Four Million",
+						"Over Six Million"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": " How many acres of rainforest are estimated to be lost every second?",
+					"answers": [
+						"One acre",
+						"One and a half acres",
+						"Two acres"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "What percentage of the world's fish stocks are either fully exploited or depleted?",
+					"answers": [
+						"50%",
+						"60%",
+						"70%"
+					],
+					"correct_answer": 3
+				}
+
+			]
+		},
+		{
+			"topic": "Celebrities",
+			"quizquestions": [{
+					"question": "Who is the host of BBC's Match of the Day?",
+					"answers": [
+						"Danny Dyer",
+						"David Attenborough",
+						"Gary Lineker"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "Which artist recently released their new album 'Her Loss'?",
+					"answers": [
+						"Drake",
+						"Skepta",
+						"Eminem"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "Who played the character of Jason Bourne in the Bourne film series?",
+					"answers": [
+						"Brad Pitt",
+						"Johnny Depp",
+						"Matt Damon"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "Who starred as Jon Snow in the television series 'Game of Thrones'?",
+					"answers": [
+						"Kit Harington",
+						"Peter Dinklage",
+						"Diego Luna"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "Who hosts BBC's gameshow 'The Wheel'?",
+					"answers": [
+						"Danny Dyer",
+						"Michael McIntyre",
+						"Bradley Walsh"
+					],
+					"correct_answer": 2
+				}
+
+			]
+		},
+		{
+			"topic": "Law",
+			"quizquestions": [{
+					"question": "What name is given to the Scottish equivalent of a barrister in England and Wales?",
+					"answers": [
+						"Advocate",
+						"Affadavit",
+						"Barista"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "Under the UK Gambling Act of 2005, lottery tickets may be bought only by people of at least what age?",
+					"answers": [
+						"15",
+						"16",
+						"17"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "The Central Criminal Court of England and Wales is commonly known by what name?",
+					"answers": [
+						"The Old Bailey",
+						"Big Ben",
+						"Downing Street"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "In which Asian country has a chewing gum sales ban been in place since 1992?",
+					"answers": [
+						"Vietnam",
+						"Japan",
+						"Singapore"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "What is the age of criminal responsibility in England and Wales?",
+					"answers": [
+						"10",
+						"12",
+						"14"
+					],
+					"correct_answer": 1
+				}
+
+			]
+		},
+		{
+			"topic": "Sport",
+			"quizquestions": [{
+					"question": "Who has made the most appearances in the Premier League?",
+					"answers": [
+						"Gary Neville",
+						"Gareth Barry",
+						"David James"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "In which year did Roger Federer win his first Wimbledon title?",
+					"answers": [
+						"2001",
+						"2002",
+						"2003"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "England won the 2003 Rugby World Cup thanks to an iconic drop goal from Jonny Wilkinson. How many points did England score in the match?",
+					"answers": [
+						"18",
+						"19",
+						"20"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "In American Football, how many points do you score for a touchdown?",
+					"answers": [
+						"5",
+						"6",
+						"7"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "In which year did England manager Gareth Southgate hit the headlines for missing an important penalty against Germany?",
+					"answers": [
+						"1990",
+						"1996",
+						"1998"
+					],
+					"correct_answer": 2
+				}
+
+			]
 		}
 	]
 }
