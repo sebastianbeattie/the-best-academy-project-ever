@@ -48,7 +48,7 @@ function addTopicToUi(topic) {
         for (var index = 0; index < questions.length; index++) {
             portfolioHtml += `
             <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal${index}">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal${index}${topicName}">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
@@ -67,9 +67,9 @@ function addTopicToUi(topic) {
             const question = questions[index];
             const questionText = question.question;
             const answers = question.answers;
-            const image = "";
+            const image = "disappointed_dg.png";
             modalHtml += `
-            <div class="portfolio-modal modal fade" id="portfolioModal${index}" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal${index}Label" aria-hidden="true">
+            <div class="portfolio-modal modal fade" id="portfolioModal${index}${topicName}" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal${index}${topicName}Label" aria-hidden="true">
                 <div class="modal-dialog modal-xl" role="document">
                     <div class="modal-content">
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
