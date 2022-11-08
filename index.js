@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const database = require("./database");
+var morgan = require('morgan')
 
 const port = 3000;
 
+app.use(morgan("dev"));
 app.use(express.static('public'));
 
 app.get("/", (req, res) => {
