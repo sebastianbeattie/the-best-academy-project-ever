@@ -1,0 +1,161 @@
+{
+	"quiz": [{
+			"topic": "history",
+			"quizquestions": [{
+					"question": "Which Roman Emperor did Vespasian succeed?",
+					"answers": [
+						"Vitellius",
+						"Julius",
+						"Nero"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "What is the name of the distinctive red pottery found on roman sites?",
+					"answers": [
+						"Ruby glass",
+						"Samian ware",
+						"Denbeigh ware"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "In which year did the Second World War begin?",
+					"answers": [
+						"1938",
+						"1939",
+						"1945"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "In which year did Queen Elizabth II ascend the British Throne?",
+					"answers": [
+						"1952",
+						"1955",
+						"1954"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "In which year did William of Normandy conquer England?",
+					"answers": [
+						"1122",
+						"1075",
+						"1066"
+					],
+					"correct_answer": 3
+				}
+			]
+		},
+		{
+			"topic": "geography",
+			"quizquestions": [{
+					"question": "which is the UK's second biggest city?",
+					"answers": [
+						"Glasgow",
+						"Cardiff",
+						"Birmingham"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "Which is the UK's smallest shire?",
+					"answers": [
+						"Renfrewshire",
+						"Diddyshire",
+						"Theshire"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "What is the largest country in South America?",
+					"answers": [
+						"Brazil",
+						"Argentina",
+						"Chile"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "What is the capital city of Egypt?",
+					"answers": [
+						"Alexandria",
+						"Cairo",
+						"Memphis"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "Which river flows through the city of Budapest?",
+					"answers": [
+						"Seine",
+						"Danube",
+						"Mersey"
+					],
+					"correct_answer": 2
+				}
+
+			]
+		},
+		{
+			"topic": "politics",
+			"quizquestions": [{
+					"question": "Who was the first female Prime Minister of the United Kingdom?",
+					"answers": [
+						"Margaret Thatcher",
+						"Theresa May",
+						"Liz Truss"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "In which year was President John F Kennedy assassinated?",
+					"answers": [
+						"1961",
+						"1963",
+						"1965"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "In which year was President John F Kennedy assassinated?",
+					"answers": [
+						"1961",
+						"1963",
+						"1965"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "Who is the current leader of the Labour Party?",
+					"answers": [
+						"Jeremy Corbyn",
+						"Gordon Brown",
+						"Keir Starmer"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "Who was the 45th President of the United States?",
+					"answers": [
+						"Donald Trump",
+						"Barack Obama",
+						"Bill Clinton"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "Who is the current Mayor of London?",
+					"answers": [
+						"Boris Johnson",
+						"Andy Burnham",
+						"Sadiq Khan"
+					],
+					"correct_answer": 3
+				}
+
+			]
+		}
+	]
+}
