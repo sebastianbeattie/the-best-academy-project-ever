@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sebastianbeattie/the-best-academy-project-ever#readme",
   "dependencies": {
+    "better-sqlite3": "^7.6.2",
     "express": "^4.18.2"
   }
 }
