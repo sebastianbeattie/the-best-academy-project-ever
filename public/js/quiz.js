@@ -122,5 +122,3 @@ doHttpGet("/gettopiclist", function(topicList) {
         addTopicToUi(topic.topic); //API returns JSON array...
     }
 });
-
-//quiz-container (beforeend)

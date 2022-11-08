@@ -1,6 +1,6 @@
 {
 	"quiz": [{
-			"topic": "history",
+			"topic": "History",
 			"quizquestions": [{
 					"question": "Which Roman Emperor did Vespasian succeed?",
 					"answers": [
@@ -49,7 +49,7 @@
 			]
 		},
 		{
-			"topic": "geography",
+			"topic": "Geography",
 			"quizquestions": [{
 					"question": "which is the UK's second biggest city?",
 					"answers": [
@@ -99,7 +99,7 @@
 			]
 		},
 		{
-			"topic": "politics",
+			"topic": "Politics",
 			"quizquestions": [{
 					"question": "Who was the first female Prime Minister of the United Kingdom?",
 					"answers": [
