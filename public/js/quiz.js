@@ -100,7 +100,7 @@ function addTopicToUi(topic) {
                                         <!-- Portfolio Modal - Close Window-->
                                         <br></br>
                                         <div class="container">
-                                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                            <button class="btn btn-danger" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                         </div>
                                     </div>
                                 </div>
