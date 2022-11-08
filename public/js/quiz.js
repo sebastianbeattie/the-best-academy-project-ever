@@ -68,6 +68,12 @@ function addTopicToUi(topic) {
             const questionText = question.question;
             const answers = question.answers;
             const image = "disappointed_dg.png";
+            var modalButtons = ""
+            for (var answerIndex = 0; answerIndex < answers.length; answerIndex++) {
+                modalButtons += `
+                <button id="${answerIndex + 1}" class="btn btn-primary">${answers[answerIndex]}</button>
+                `
+            }
             modalHtml += `
             <div class="portfolio-modal modal fade" id="portfolioModal${index}${topicName}" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal${index}${topicName}Label" aria-hidden="true">
                 <div class="modal-dialog modal-xl" role="document">
@@ -90,17 +96,12 @@ function addTopicToUi(topic) {
                                         <!-- Portfolio Modal - Text-->
                                         <p class="mb-5">${questionText}</p>
                                         <!-- Portfolio Modal - Buttons-->
-            `
-
-            for (var answerIndex = 0; answerIndex < answers.length; answerIndex++) {
-                modalHtml += `
-                <button id="${answerIndex + 1}" class="btn btn-primary">${answers[answerIndex]}</button>
-                `
-            }
-
-            modalHtml += `
+                                        ${modalButtons}
                                         <!-- Portfolio Modal - Close Window-->
-                                        <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                        <br></br>
+                                        <div class="container">
+                                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
