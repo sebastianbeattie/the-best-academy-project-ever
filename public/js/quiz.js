@@ -24,9 +24,25 @@ function addAnswerSheet(topic) {
 function confirmAnswer(topic, question, answer) {
     const answerSheet = JSON.parse(window.localStorage.getItem(topic + "-answers"));
     const questionFromStorage = answerSheet.find(q => q.question == question);
-    console.log(questionFromStorage);
-    console.log(topic, question, answer);
     return questionFromStorage.answer == answer;
+}
+
+function getQuestionCount(topic) {
+    const answerSheet = JSON.parse(window.localStorage.getItem(topic + "-answers"));
+    return answerSheet.length;
+}
+
+function allQuestionsAreAnswered(topic) {
+    const questionCount = getQuestionCount(topic);
+    var questionList = [];
+    for (var i = 0; i < questionCount; i++) {
+        questionList.push(document.getElementById(`portfolioModal${i}${topic}`));
+    }
+    var allAnswered = true;
+    for (question of questionList) {
+        if (!question.classList.contains("answered")) allAnswered = false;
+    }
+    return allAnswered;
 }
 
 function checkAnswer(button) {
@@ -35,6 +51,8 @@ function checkAnswer(button) {
     const question = buttonIdParts[1];
     const answer = buttonIdParts[2];
     var image = document.getElementById(`image${question}${topic}`);
+    var questionContainer = document.getElementById(`portfolioModal${question}${topic}`);
+    if (questionContainer.classList.contains("answered")) return;
     var response = document.getElementById(`response${question}${topic}`);
     if (confirmAnswer(topic, question, answer)) {
         image.src = "img/happy_dg.png";
@@ -44,6 +62,7 @@ function checkAnswer(button) {
         response.innerHTML = "You got it wrong! The Director General is disappointed with you";
     }
     image.classList.remove("hidden");
+    questionContainer.classList.add("answered");
 }
 
 function addTopicToUi(topic) {
