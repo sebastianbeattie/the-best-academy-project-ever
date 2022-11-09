@@ -45,7 +45,7 @@ function checkAnswer(button) {
         response.innerHTML = "You got it right! The Director General is happy with you, super groovy";
     } else {
         image.src = "img/disappointed_dg.png";
-        response.innerHTML = "You got it wrong! The Director General is disappointed with you";
+        response.innerHTML = "You got it wrong! The Director General is disappointed with you, Nat would like a word with you";
     }
     image.classList.remove("hidden");
 }
