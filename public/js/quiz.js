@@ -83,9 +83,11 @@ function checkAnswer(button) {
     if (confirmAnswer(topic, question, answer)) {
         image.src = "img/happy_dg.png";
         response.innerHTML = "You got it right! Super Groovy";
+        questionContainer.classList.add("correct");
     } else {
         image.src = "img/disappointed_dg.png";
         response.innerHTML = "You got it wrong! Nat would like a word with you";
+        questionContainer.classList.add("incorrect");
     }
     image.classList.remove("hidden");
     questionContainer.classList.add("answered");
