@@ -59,7 +59,7 @@ function checkAnswer(button) {
         response.innerHTML = "You got it right! The Director General is happy with you, super groovy";
     } else {
         image.src = "img/disappointed_dg.png";
-        response.innerHTML = "You got it wrong! The Director General is disappointed with you";
+        response.innerHTML = "You got it wrong! The Director General is disappointed with you, Nat would like a word with you";
     }
     image.classList.remove("hidden");
     questionContainer.classList.add("answered");
@@ -103,7 +103,7 @@ function addTopicToUi(topic) {
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal${index}${topicName}">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                <div class="portfolio-item-caption-content text-center text-white"><i"></i></div>
                 </div>
                 <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Question ${index + 1}</h2>
                 </div>
