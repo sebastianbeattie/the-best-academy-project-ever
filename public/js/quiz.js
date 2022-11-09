@@ -82,12 +82,19 @@ function checkAnswer(button) {
     var response = document.getElementById(`response${question}${topic}`);
     if (confirmAnswer(topic, question, answer)) {
         image.src = "img/happy_dg.png";
+<<<<<<< HEAD
         response.innerHTML = "You got it right! The Director General is happy with you, super groovy";
         questionContainer.classList.add("correct");
     } else {
         image.src = "img/disappointed_dg.png";
         response.innerHTML = "You got it wrong! The Director General is disappointed with you, Nat would like a word with you";
         questionContainer.classList.add("incorrect");
+=======
+        response.innerHTML = "You got it right! Super Groovy";
+    } else {
+        image.src = "img/disappointed_dg.png";
+        response.innerHTML = "You got it wrong! Nat would like a word with you";
+>>>>>>> bb682634bb115d1c395d088e7a820356d6b162b2
     }
     image.classList.remove("hidden");
     questionContainer.classList.add("answered");
