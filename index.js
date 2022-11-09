@@ -12,6 +12,11 @@ app.get("/", (req, res) => {
     res.redirect("/index.html");
 });
 
+app.get("/quizresult", (req, res) => {
+    console.log(JSON.parse(req.query.result));
+    res.send(JSON.stringify({}));
+});
+
 app.get("/gettopiclist", (req, res) => {
     res.setHeader("Content-Type", "application/json");
     let topicData = database.getAllQuizTopics();

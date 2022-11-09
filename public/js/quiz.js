@@ -1,3 +1,8 @@
+function getUserId() {
+    let userID = window.localStorage.getItem("userID");
+    return (userID == undefined ? crypto.randomUUID() : userID);
+}
+
 function doHttpGet(url, callback) {
    var xhr = new XMLHttpRequest();
 
@@ -51,7 +56,7 @@ function allQuestionsAreAnswered(topic) {
 }
 
 function getScore(topic) {
-    var response = {topic: topic, score: 0, total: 0, results: []};
+    var response = {topic: topic, score: 0, total: 0, userID: getUserId(), results: []};
     var questionList = getQuestionList(topic);
     for (var i = 0; i < questionList.length; i++) {
         response.results.push({question: i, correct: questionList[i].classList.contains("correct")});
@@ -67,7 +72,9 @@ function submitAnswers(submitButton) {
         window.alert("Go and answer the questions or Nat will be unhappy");
     } else {
         const score = getScore(topicName);
-        window.alert(`You got ${score.score} out of ${score.total}`);
+        doHttpGet(`/quizresult?result=${encodeURIComponent(JSON.stringify(score))}`, function (response) {
+            window.alert(`You got ${score.score} out of ${score.total}`);
+        });
     }
 }
 
@@ -139,6 +146,9 @@ function addTopicToUi(topic) {
             `
         }
         portfolioHtml += `
+                    <div class="container text-center">
+                        <button type="button" class="btn btn-success" onclick="submitAnswers(this)" id="submit-${topicName}">Submit</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -193,12 +203,6 @@ function addTopicToUi(topic) {
             </div>
             `;
         }
-
-        portfolioHtml += `
-        <div class="container text-center">
-            <button type="button" class="btn btn-success" onclick="submitAnswers(this)" id="submit-${topicName}">Submit</button>
-        </div>
-        `
 
         document.getElementById("quiz-container").insertAdjacentHTML("afterbegin", portfolioHtml);
         document.getElementById("quiz-container").insertAdjacentHTML("beforeend", modalHtml);
