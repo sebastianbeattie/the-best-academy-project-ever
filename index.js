@@ -20,7 +20,8 @@ app.get("/gettopiclist", (req, res) => {
 
 app.get("/gettopic", (req, res) => {
     res.setHeader("Content-Type", "application/json");
-    let quizData = database.getAllQuizQuestionsForTopic(req.query.topic)
+    let quizData = database.getAllQuizQuestionsForTopic(req.query.topic);
+    database.addTopicVisitEvent(req.query.topic);
     res.end(JSON.stringify(quizData));
 });
 
