@@ -67,7 +67,7 @@ function addTopicToUi(topic) {
             const question = questions[index];
             const questionText = question.question;
             const answers = question.answers;
-            const image = "disappointed_dg.png";
+            const image = "img/disappointed_dg.png";
             var modalButtons = ""
             for (var answerIndex = 0; answerIndex < answers.length; answerIndex++) {
                 modalButtons += `
