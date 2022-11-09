@@ -2,4 +2,4 @@
 
 By Danny, Catherine, Tom and Seb
 
-![Disappointed DG](public/disappointed_dg.png)
+![Disappointed DG](public/long_dg.png)
