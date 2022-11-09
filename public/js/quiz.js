@@ -14,11 +14,49 @@ function capitaliseFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function addAnswerSheet(topic) {
+    var answers = [];
+
+    for (var index = 0; index < topic.questions.length; index++) {
+        var question = topic.questions[index];
+        answers.push({question: index, answer: question.correct_answer});
+    }
+
+    window.localStorage.setItem(topic.topic + "-answers", JSON.stringify(answers));
+}
+
+function confirmAnswer(topic, question, answer) {
+    const answerSheet = JSON.parse(window.localStorage.getItem(topic + "-answers"));
+    const questionFromStorage = answerSheet.find(q => q.question == question);
+    console.log(questionFromStorage);
+    console.log(topic, question, answer);
+    return questionFromStorage.answer == answer;
+}
+
+function checkAnswer(button) {
+    const buttonIdParts = button.id.split("-");
+    const topic = buttonIdParts[0];
+    const question = buttonIdParts[1];
+    const answer = buttonIdParts[2];
+    var image = document.getElementById(`image${question}${topic}`);
+    var response = document.getElementById(`response${question}${topic}`);
+    if (confirmAnswer(topic, question, answer)) {
+        image.src = "img/happy_dg.png";
+        response.innerHTML = "You got it right! The Director General is happy with you";
+    } else {
+        image.src = "img/disappointed_dg.png";
+        response.innerHTML = "You got it wrong! The Director General is disappointed with you";
+    }
+    image.classList.remove("hidden");
+}
+
 function addTopicToUi(topic) {
     doHttpGet(`/gettopic?topic=${encodeURIComponent(topic)}`, function(topic) {
         const topicData = topic[0];
         const topicName = topicData.topic;
         const questions = topicData.questions;
+
+        addAnswerSheet(topicData);
 
         const navbarHtml = `
         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#${topicName}">${capitaliseFirstLetter(topicName)}</a>
@@ -71,7 +109,7 @@ function addTopicToUi(topic) {
             var modalButtons = ""
             for (var answerIndex = 0; answerIndex < answers.length; answerIndex++) {
                 modalButtons += `
-                <button id="${answerIndex + 1}" class="btn btn-primary">${answers[answerIndex]}</button>
+                <button id="${topicName}-${index}-${answerIndex + 1}" class="btn btn-primary" onclick=checkAnswer(this)>${answers[answerIndex]}</button>
                 `
             }
             modalHtml += `
@@ -92,7 +130,8 @@ function addTopicToUi(topic) {
                                             <div class="divider-custom-line"></div>
                                         </div>
                                         <!-- Portfolio Modal - Image-->
-                                        <img class="img-fluid rounded mb-5" src="${image}" alt="A lovely image goes here" />
+                                        <img class="img-fluid rounded mb-5 hidden" alt="A lovely image goes here" id="image${index}${topicName}"/>
+                                        <p class="mb-5" id="response${index}${topicName}"></p>
                                         <!-- Portfolio Modal - Text-->
                                         <p class="mb-5">${questionText}</p>
                                         <!-- Portfolio Modal - Buttons-->
@@ -110,7 +149,6 @@ function addTopicToUi(topic) {
                 </div>
             </div>
             `;
-
         }
 
         document.getElementById("quiz-container").insertAdjacentHTML("afterbegin", portfolioHtml);
