@@ -32,17 +32,43 @@ function getQuestionCount(topic) {
     return answerSheet.length;
 }
 
-function allQuestionsAreAnswered(topic) {
+function getQuestionList(topic) {
     const questionCount = getQuestionCount(topic);
     var questionList = [];
     for (var i = 0; i < questionCount; i++) {
         questionList.push(document.getElementById(`portfolioModal${i}${topic}`));
     }
+    return questionList;
+}
+
+function allQuestionsAreAnswered(topic) {
+    var questionList = getQuestionList(topic);
     var allAnswered = true;
     for (question of questionList) {
         if (!question.classList.contains("answered")) allAnswered = false;
     }
     return allAnswered;
+}
+
+function getScore(topic) {
+    var response = {topic: topic, score: 0, total: 0, results: []};
+    var questionList = getQuestionList(topic);
+    for (var i = 0; i < questionList.length; i++) {
+        response.results.push({question: i, correct: questionList[i].classList.contains("correct")});
+    }
+    response.score = response.results.filter(r => r.correct).length;
+    response.total = questionList.length;
+    return response;
+}
+
+function submitAnswers(submitButton) {
+    const topicName = submitButton.id.split("-")[1];
+    if (!allQuestionsAreAnswered(topicName)) {
+        window.alert("Go and answer the questions or Nat will be unhappy");
+    } else {
+        const score = getScore(topicName);
+        window.alert(`You got ${score.score} out of ${score.total}`);
+    }
 }
 
 function checkAnswer(button) {
@@ -57,9 +83,11 @@ function checkAnswer(button) {
     if (confirmAnswer(topic, question, answer)) {
         image.src = "img/happy_dg.png";
         response.innerHTML = "You got it right! The Director General is happy with you, super groovy";
+        questionContainer.classList.add("correct");
     } else {
         image.src = "img/disappointed_dg.png";
         response.innerHTML = "You got it wrong! The Director General is disappointed with you, Nat would like a word with you";
+        questionContainer.classList.add("incorrect");
     }
     image.classList.remove("hidden");
     questionContainer.classList.add("answered");
@@ -165,6 +193,12 @@ function addTopicToUi(topic) {
             </div>
             `;
         }
+
+        portfolioHtml += `
+        <div class="container text-center">
+            <button type="button" class="btn btn-success" onclick="submitAnswers(this)" id="submit-${topicName}">Submit</button>
+        </div>
+        `
 
         document.getElementById("quiz-container").insertAdjacentHTML("afterbegin", portfolioHtml);
         document.getElementById("quiz-container").insertAdjacentHTML("beforeend", modalHtml);
