@@ -119,15 +119,6 @@
 					"correct_answer": 2
 				},
 				{
-					"question": "In which year was President John F Kennedy assassinated?",
-					"answers": [
-						"1961",
-						"1963",
-						"1965"
-					],
-					"correct_answer": 2
-				},
-				{
 					"question": "Who is the current leader of the Labour Party?",
 					"answers": [
 						"Jeremy Corbyn",
