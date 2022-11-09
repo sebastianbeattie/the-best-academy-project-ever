@@ -21,6 +21,18 @@ db.exec(CREATE_QUIZ_SCHEMA);
 db.exec(CREATE_TIME_METRICS_SCHEMA);
 db.exec(CREATE_RESULT_METRICS_SCHEMA);
 
+function boolToInt(bool) {
+    return bool ? 1 : 0;
+}
+
+function updateQuizResults(results) {
+    db.prepare(INVALIDATE_PREVIOUS_ATTEMPTS).run(results.userID, results.topic);
+
+    for (result of results.results) {
+        db.prepare(INSERT_NEW_ATTEMPT).run(results.topic, result.question.toString(), results.userID, boolToInt(result.correct), boolToInt(true));
+    }
+}
+
 function addTopicVisitEvent(topic) {
     const dateTime = new Date().toISOString();
     db.prepare(INSERT_TIME_METRIC).run(topic, dateTime);
@@ -46,4 +58,4 @@ function getAllQuizTopics() {
     return db.prepare(GET_ALL_QUIZ_TOPICS).all();
 }
 
-module.exports = {getAllQuizQuestionsForTopic, getAllQuizQuestions, getAllQuizTopics, addTopicVisitEvent};
+module.exports = {getAllQuizQuestionsForTopic, getAllQuizQuestions, getAllQuizTopics, addTopicVisitEvent, updateQuizResults};

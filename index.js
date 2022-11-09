@@ -13,7 +13,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/quizresult", (req, res) => {
-    console.log(JSON.parse(req.query.result));
+    const results = JSON.parse(req.query.result);
+    database.updateQuizResults(results);
     res.send(JSON.stringify({}));
 });
 
