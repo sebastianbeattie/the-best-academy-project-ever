@@ -40,3 +40,8 @@ a:hover {
     color: white !important;
     text-decoration: underline !important;
 }
+
+.portfolio:hover .portfolio-item:hover .portfolio-item-caption:hover {
+    background-color: #b80000;
+    opacity: 0.8;
+}

@@ -142,6 +142,7 @@ function insertPortfolioAndModal(topicData) {
 
     document.getElementById("the-content-zone").innerHTML = "";
     document.getElementById("the-content-zone").insertAdjacentHTML("afterbegin", portfolioHtml);
+    window.scrollTo(0, 0);
 }
 
 function addTopicToNavBar(topic) {
@@ -161,7 +162,7 @@ function tileView(topic) {
     <div class="col-md-6 col-lg-4 mb-5">
         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" id="${topic.topic}" onclick="addTopicToUi(this.id)">
-                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                <div class="portfolio-item-caption-content text-center text-white">${topicName}</i></div>
             </div><img class="img-fluid" src="${imageSrc}" alt="${topicName}"/>
         </div>
     </div>`
