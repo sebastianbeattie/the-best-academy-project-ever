@@ -105,20 +105,22 @@ function checkAnswer(button) {
 }
 
 function addTopicToNavBar(topic) {
-    doHttpGet(`/gettopic?topic=${encodeURIComponent(topic)}`, function(topic) {
-        const topicData = topic[0];
-        const topicName = topicData.topic;
-        const navbarHtml = `
-        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link js-scroll-trigger" href="#${topicName}">${topicName}</a>
+
+    const navbarHtml = `
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link js-scroll-trigger" href="#${topic}">${topic}</a>
         </li>
         `;
-        document.getElementById("quiz-navbar").insertAdjacentHTML("afterbegin", navbarHtml);
-        //addTopicToUi(topic);
+    document.getElementById("quiz-navbar").insertAdjacentHTML("afterbegin", navbarHtml);
+}
+
+function addTopicToUi(topicName) {
+    doHttpGet(`/gettopic?topic=${encodeURIComponent(topicName)}`, function(topics) {
+        const topicData = topics[0];
+        insertPortfolioAndModal(topicData);
     });
 }
 
-function addTopicToUi(topic) {
-    const topicData = topic[0];
+function insertPortfolioAndModal(topicData) {
     const topicName = topicData.topic;
     const questions = topicData.questions;
     addAnswerSheet(topicData);
