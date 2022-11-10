@@ -10,21 +10,33 @@
     color: #222;
 }
 
-.btn-primary {
-    background-color: #222;
-    border: 2px solid #b80000;
-}
-
-.btn-primary:hover {
+button {
     background-color: #b80000;
     border: 2px solid #b80000;
+    color: white;
 }
 
-.btn-primary:focus {
+button:hover {
+    background-color: #EEEEEE;
+    border: 2px solid #b80000;
+    color: #222
+}
+
+button:focus {
     background-color: #b80000;
     border: 2px solid #b80000;
 }
 
 .hidden {
     display: none;
+}
+
+.close-button {
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}
+
+a:hover {
+    color: white !important;
+    text-decoration: underline !important;
 }

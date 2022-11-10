@@ -113,7 +113,7 @@ function checkAnswer(buttonId) {
 function addTopicToNavBar(topic) {
 
     const navbarHtml = `
-        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link js-scroll-trigger" id="${topic}" onclick="addTopicToUi(this.id)" href="#${topic}">${topic}</a>
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" id="${topic}" onclick="addTopicToUi(this.id)" href="#${topic}">${topic}</a>
         </li>
         `;
     document.getElementById("quiz-navbar").insertAdjacentHTML("afterbegin", navbarHtml);
@@ -145,14 +145,14 @@ function insertPortfolioAndModal(topicData) {
         `;
         for (var answerIndex = 0; answerIndex < questionData.answers.length; answerIndex++) {
             portfolioHtml += `
-            <button id="${topicName}-${questionindex}-${answerIndex + 1}" class="btn btn-primary" onclick=checkAnswer(this.id)>${questionData.answers[answerIndex]}</button>
+            <button id="${topicName}-${questionindex}-${answerIndex + 1}" onclick=checkAnswer(this.id)>${questionData.answers[answerIndex]}</button>
             `
         }
         portfolioHtml += "</div>";
     }
 
     portfolioHtml += `
-    <button type="button" class="btn btn-success" onclick="submitAnswers(this)" id="submit-${topicName}" data-target="modal">Submit</button>
+    <button type="button" onclick="submitAnswers(this)" id="submit-${topicName}" data-target="modal">Submit</button>
     `
 
     document.getElementById("the-content-zone").innerHTML = "";
