@@ -1,0 +1,22 @@
+{
+    "name": "AcademyInjector",
+    "description": "Nothing to see here...",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "scripting",
+        "tabs",
+        "activeTab",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.bbc.co.uk/*"
+            ],
+            "js": [
+                "inject.js"
+            ]
+        }
+    ]
+}
