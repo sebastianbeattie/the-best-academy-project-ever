@@ -113,16 +113,15 @@ function checkAnswer(buttonId) {
 }
 
 function addTopicToNavBar(topic) {
-
     const navbarHtml = `
-        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" id="${topic}" onclick="addTopicToUi(this.id)" href="#${topic}">${topic}</a>
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" id="${topic.topic}" onclick="addTopicToUi(this.id)" href="#${topic.topic}">${topic.topic}</a>
         </li>
         `;
     document.getElementById("quiz-navbar").insertAdjacentHTML("afterbegin", navbarHtml);
     tileView(topic);
 }
 
-function tileView(topic){
+function tileView(topic) {
     const topicName = topic.topic
     const imageSrc = topic.image
 
@@ -134,7 +133,7 @@ function tileView(topic){
     </div>
 </div>`
 
-document.getElementById("tileViewContainer").insertAdjacentHTML("afterbegin", tileHtml);
+    document.getElementById("tileViewContainer").insertAdjacentHTML("afterbegin", tileHtml);
 }
 
 function addTopicToUi(topicName) {
@@ -179,6 +178,6 @@ function insertPortfolioAndModal(topicData) {
 
 doHttpGet("/gettopiclist", function (topicList) {
     for (topic of topicList) {
-        addTopicToNavBar(topic.topic); //API returns JSON array...
+        addTopicToNavBar(topic); //API returns JSON array...
     }
 });
