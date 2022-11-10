@@ -1,6 +1,10 @@
 function getUserId() {
     let userID = window.localStorage.getItem("userID");
-    return (userID == undefined ? crypto.randomUUID() : userID);
+    if (userID == undefined) {
+        userID = crypto.randomUUID()
+        window.localStorage.setItem("userID", userID);
+    }
+    return userID;
 }
 
 function doHttpGet(url, callback) {
