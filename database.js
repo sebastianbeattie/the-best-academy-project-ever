@@ -16,6 +16,7 @@ const INSERT_TIME_METRIC = "INSERT INTO TimeMetrics VALUES (?, ?)";
 const CREATE_RESULT_METRICS_SCHEMA = "CREATE TABLE IF NOT EXISTS ResultMetrics (topic TEXT, difficulty TEXT, question TEXT, userID TEXT, correctOrNot BOOL, mostRecent BOOl)"
 const INVALIDATE_PREVIOUS_ATTEMPTS = "UPDATE ResultMetrics SET mostRecent = false WHERE userID = ? AND topic = ?";
 const INSERT_NEW_ATTEMPT = "INSERT INTO ResultMetrics VALUES(?, ?, ?, ?, ?, ?)";
+const GET_LEADERBOARD_FOR_TOPIC_AND_DIFFICULTY = "SELECT topic, userID, difficulty, COUNT(*) FROM ResultMetrics WHERE mostRecent = true AND correctOrNot = true AND LOWER(topic) = LOWER(?) AND difficulty = ? GROUP BY userID, topic, difficulty ORDER BY COUNT(*) DESC";
 
 //Create Tables
 db.exec(CREATE_QUIZ_SCHEMA);
@@ -27,7 +28,6 @@ function boolToInt(bool) {
 }
 
 function updateQuizResults(results) {
-    console.log(results);
     db.prepare(INVALIDATE_PREVIOUS_ATTEMPTS).run(results.userID, results.topic);
 
     for (result of results.results) {
@@ -62,8 +62,13 @@ function getAllQuizTopics() {
     return db.prepare(GET_ALL_QUIZ_TOPICS_AND_IMAGES).all();
 }
 
-function getUserResults() {
-
+function getLeaderboardForTopicAndDifficulty(topic, difficulty) {
+    var leaderboard = db.prepare(GET_LEADERBOARD_FOR_TOPIC_AND_DIFFICULTY).all(topic, difficulty);
+    for (leaderboardRow of leaderboard) {
+        leaderboardRow.score = leaderboardRow["COUNT(*)"];
+        delete leaderboardRow["COUNT(*)"];
+    }
+    return leaderboard;
 }
 
 module.exports = {
@@ -72,5 +77,5 @@ module.exports = {
     getAllQuizTopics,
     addTopicVisitEvent,
     updateQuizResults,
-    getUserResults
+    getLeaderboardForTopicAndDifficulty
 };

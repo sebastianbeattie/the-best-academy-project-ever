@@ -12,9 +12,9 @@ app.get("/", (req, res) => {
     res.redirect("/index.html");
 });
 
-app.get("/userresult", (req, res) => {
+app.get("/leaderboard", (req, res) => {
     res.setHeader("Content-Type", "application/json");
-    let resultsData = database.getUserResults(req.query.userID);
+    let resultsData = database.getLeaderboardForTopicAndDifficulty(req.query.topic, req.query.difficulty);
     res.end(JSON.stringify(resultsData));
 });
 

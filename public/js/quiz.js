@@ -28,6 +28,34 @@ function showModal(title, content) {
     $('#modal').modal();
 }
 
+function generateLeaderboard(leaderboard) {
+    var rows = "";
+
+    for (row of leaderboard) {
+        const name = row.userID;
+        const score = row.score;
+        rows += `
+        <tr>
+            <td>${name}</td>
+            <td>${score}</td>
+        </tr>
+        `
+    }
+
+    var leaderboardHtml = `
+    <center>
+    <table id="quiz-leaderboard">
+        <tr>
+            <th>User</th>
+            <th>Score</th>
+        </tr>
+        ${rows}
+    </table>
+    </center>
+    `;
+    return leaderboardHtml;
+}
+
 function doHttpGet(url, callback) {
     var xhr = new XMLHttpRequest();
 
@@ -98,7 +126,10 @@ function submitAnswers(submitButton) {
     } else {
         const score = getScore(topicName);
         doHttpGet(`/quizresult?result=${encodeURIComponent(JSON.stringify(score))}`, function (response) {
-            showModal("Quiz Results", `You got ${score.score} out of ${score.total}`);
+            doHttpGet(`/leaderboard?topic=${topicName}&difficulty=${getDifficulty()}`, function (leaderboard) {
+                var leaderboardHtml = generateLeaderboard(leaderboard);
+                showModal("Quiz Results", `You got ${score.score} out of ${score.total}<br>${leaderboardHtml}`);
+            });
         });
     }
 }
