@@ -1,8 +1,10 @@
 {
-	"quiz": [{
+	"quiz": [
+		{
 			"topic": "History",
-			"background": "public/img/history.jpg",
-			"quizquestions": [{
+			"background": "img/history.jpg",
+			"quizquestions": [
+				{
 					"question": "Which Roman Emperor did Vespasian succeed?",
 					"answers": [
 						"Vitellius",
@@ -51,8 +53,9 @@
 		},
 		{
 			"topic": "Geography",
-			"background": "public/img/geography.jpg",
-			"quizquestions": [{
+			"background": "img/geography.jpg",
+			"quizquestions": [
+				{
 					"question": "which is the UK's second biggest city?",
 					"answers": [
 						"Glasgow",
@@ -97,13 +100,13 @@
 					],
 					"correct_answer": 2
 				}
-
 			]
 		},
 		{
 			"topic": "Politics",
-			"background": "public/img/politics.jpg",
-			"quizquestions": [{
+			"background": "img/politics.jpg",
+			"quizquestions": [
+				{
 					"question": "Who was the first female Prime Minister of the United Kingdom?",
 					"answers": [
 						"Margaret Thatcher",
@@ -148,13 +151,13 @@
 					],
 					"correct_answer": 3
 				}
-
 			]
 		},
 		{
 			"topic": "Conservation",
-			"background": "public/img/conservation.jpg",
-			"quizquestions": [{
+			"background": "img/conservation.jpg",
+			"quizquestions": [
+				{
 					"question": "Who is the host of Blue Planet?",
 					"answers": [
 						"Danny Dyer",
@@ -199,13 +202,13 @@
 					],
 					"correct_answer": 3
 				}
-
 			]
 		},
 		{
 			"topic": "Celebrities",
-			"background": "public/img/celebrities.jpg",
-			"quizquestions": [{
+			"background": "img/celebrities.jpg",
+			"quizquestions": [
+				{
 					"question": "Who is the host of BBC's Match of the Day?",
 					"answers": [
 						"Danny Dyer",
@@ -250,13 +253,13 @@
 					],
 					"correct_answer": 2
 				}
-
 			]
 		},
 		{
 			"topic": "Law",
-			"background": "public/img/law.jpg",
-			"quizquestions": [{
+			"background": "img/law.jpg",
+			"quizquestions": [
+				{
 					"question": "What name is given to the Scottish equivalent of a barrister in England and Wales?",
 					"answers": [
 						"Advocate",
@@ -301,13 +304,13 @@
 					],
 					"correct_answer": 1
 				}
-
 			]
 		},
 		{
 			"topic": "Sport",
-			"background": "public/img/sport.jpg",
-			"quizquestions": [{
+			"background": "img/sport.jpg",
+			"quizquestions": [
+				{
 					"question": "Who has made the most appearances in the Premier League?",
 					"answers": [
 						"Gary Neville",
@@ -352,7 +355,6 @@
 					],
 					"correct_answer": 2
 				}
-
 			]
 		}
 	]
