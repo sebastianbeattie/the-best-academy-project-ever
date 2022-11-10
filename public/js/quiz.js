@@ -107,7 +107,7 @@ function checkAnswer(button) {
 function addTopicToNavBar(topic) {
 
     const navbarHtml = `
-        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link js-scroll-trigger" href="#${topic}">${topic}</a>
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link js-scroll-trigger" id="${topic}" onclick="addTopicToUi(this.id)" href="#${topic}">${topic}</a>
         </li>
         `;
     document.getElementById("quiz-navbar").insertAdjacentHTML("afterbegin", navbarHtml);
@@ -167,7 +167,6 @@ function insertPortfolioAndModal(topicData) {
             const question = questions[index];
             const questionText = question.question;
             const answers = question.answers;
-            const image = "img/disappointed_dg.png";
             var modalButtons = ""
             for (var answerIndex = 0; answerIndex < answers.length; answerIndex++) {
                 modalButtons += `
@@ -193,9 +192,9 @@ function insertPortfolioAndModal(topicData) {
                                         </div>
                                         <!-- Portfolio Modal - Image-->
                                         <img class="img-fluid rounded mb-5 hidden" alt="A lovely image goes here" id="image${index}${topicName}"/>
-                                        <p class="mb-5" id="response${index}${topicName}"></p>
+                                        <p class="main-text" id="response${index}${topicName}"></p>
                                         <!-- Portfolio Modal - Text-->
-                                        <p class="mb-5">${questionText}</p>
+                                        <p class="main-text">${questionText}</p>
                                         <!-- Portfolio Modal - Buttons-->
                                         ${modalButtons}
                                         <!-- Portfolio Modal - Close Window-->
@@ -212,9 +211,9 @@ function insertPortfolioAndModal(topicData) {
             </div>
             `;
         }
-
-        document.getElementById("quiz-container").insertAdjacentHTML("afterbegin", portfolioHtml);
-        document.getElementById("quiz-container").insertAdjacentHTML("beforeend", modalHtml);
+        document.getElementById("the-content-zone").innerHTML = "";
+        document.getElementById("the-content-zone").insertAdjacentHTML("afterbegin", portfolioHtml);
+        document.getElementById("the-content-zone").insertAdjacentHTML("beforeend", modalHtml);
 }
 
 doHttpGet("/gettopiclist", function(topicList) {
