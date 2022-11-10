@@ -1,10 +1,10 @@
 const db = require("better-sqlite3")("QuizData.db");
 
 //Quiz queries
-const CREATE_QUIZ_SCHEMA = "CREATE TABLE IF NOT EXISTS QuizData (topic TEXT, questions TEXT)";
+const CREATE_QUIZ_SCHEMA = "CREATE TABLE IF NOT EXISTS QuizData (topic TEXT, image TEXT, questions TEXT)";
 const GET_QUESTIONS_FOR_TOPIC = "SELECT * FROM QuizData WHERE LOWER(topic) = LOWER(?)";
 const GET_ALL_QUIZ_QUESTIONS = "SELECT * FROM QuizData";
-const GET_ALL_QUIZ_TOPICS = "SELECT topic FROM QuizData";
+const GET_ALL_QUIZ_TOPICS_AND_IMAGES = "SELECT topic, image FROM QuizData";
 
 //Time metrics queries
 const CREATE_TIME_METRICS_SCHEMA = "CREATE TABLE IF NOT EXISTS TimeMetrics (topic TEXT, dateTime TEXT)";
@@ -58,7 +58,7 @@ function getAllQuizQuestions() {
 }
 
 function getAllQuizTopics() {
-    return db.prepare(GET_ALL_QUIZ_TOPICS).all();
+    return db.prepare(GET_ALL_QUIZ_TOPICS_AND_IMAGES).all();
 }
 
 function getUserResults() {
