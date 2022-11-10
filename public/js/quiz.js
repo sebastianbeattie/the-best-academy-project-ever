@@ -81,7 +81,7 @@ function allQuestionsAreAnswered(topic) {
 }
 
 function getScore(topic) {
-    var response = { topic: topic, score: 0, total: 0, userID: getUserId(), results: [] };
+    var response = { topic: topic, difficulty: getDifficulty(), score: 0, total: 0, userID: getUserId(), results: [] };
     var questionList = getQuestionList(topic);
     for (var i = 0; i < questionList.length; i++) {
         response.results.push({ question: i, correct: questionList[i].classList.contains("correct") });

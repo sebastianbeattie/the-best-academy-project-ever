@@ -13,9 +13,9 @@ const INSERT_TIME_METRIC = "INSERT INTO TimeMetrics VALUES (?, ?)";
 //SELECT topic, COUNT(*) FROM TimeMetrics GROUP BY topic ORDER BY COUNT(*) DESC
 
 //Result Metrics queries
-const CREATE_RESULT_METRICS_SCHEMA = "CREATE TABLE IF NOT EXISTS ResultMetrics (topic TEXT, question TEXT, userID TEXT, correctOrNot BOOL, mostRecent BOOl)"
+const CREATE_RESULT_METRICS_SCHEMA = "CREATE TABLE IF NOT EXISTS ResultMetrics (topic TEXT, difficulty TEXT, question TEXT, userID TEXT, correctOrNot BOOL, mostRecent BOOl)"
 const INVALIDATE_PREVIOUS_ATTEMPTS = "UPDATE ResultMetrics SET mostRecent = false WHERE userID = ? AND topic = ?";
-const INSERT_NEW_ATTEMPT = "INSERT INTO ResultMetrics VALUES(?, ?, ?, ?, ?)";
+const INSERT_NEW_ATTEMPT = "INSERT INTO ResultMetrics VALUES(?, ?, ?, ?, ?, ?)";
 
 //Create Tables
 db.exec(CREATE_QUIZ_SCHEMA);
@@ -30,7 +30,7 @@ function updateQuizResults(results) {
     db.prepare(INVALIDATE_PREVIOUS_ATTEMPTS).run(results.userID, results.topic);
 
     for (result of results.results) {
-        db.prepare(INSERT_NEW_ATTEMPT).run(results.topic, result.question.toString(), results.userID, boolToInt(result.correct), boolToInt(true));
+        db.prepare(INSERT_NEW_ATTEMPT).run(results.topic, results.difficulty, result.question.toString(), results.userID, boolToInt(result.correct), boolToInt(true));
     }
 }
 
