@@ -88,8 +88,6 @@ function submitAnswers(submitButton) {
     }
 }
 
-
-
 function checkAnswer(buttonId) {
     const buttonIdParts = buttonId.split("-");
     const topic = buttonIdParts[0];
@@ -112,38 +110,8 @@ function checkAnswer(buttonId) {
     questionContainer.classList.add("answered");
 }
 
-function addTopicToNavBar(topic) {
-    const navbarHtml = `
-        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" id="${topic.topic}" onclick="addTopicToUi(this.id)" href="#${topic.topic}">${topic.topic}</a>
-        </li>
-        `;
-    document.getElementById("quiz-navbar").insertAdjacentHTML("afterbegin", navbarHtml);
-    tileView(topic);
-}
-
-function tileView(topic) {
-    const topicName = topic.topic
-    const imageSrc = topic.image
-
-    const tileHtml = `                <div class="col-md-6 col-lg-4 mb-5">
-    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
-        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-        </div><img class="img-fluid" src="${imageSrc}" alt="${topicName}"/>
-    </div>
-</div>`
-
-    document.getElementById("tileViewContainer").insertAdjacentHTML("afterbegin", tileHtml);
-}
-
-function addTopicToUi(topicName) {
-    doHttpGet(`/gettopic?topic=${encodeURIComponent(topicName)}`, function (topics) {
-        const topicData = topics[0];
-        insertPortfolioAndModal(topicData);
-    });
-}
-
 function insertPortfolioAndModal(topicData) {
+    document.title = "BBC quiz - " + topicData.topic;
     const topicName = topicData.topic;
     const questions = topicData.questions;
     addAnswerSheet(topicData);
@@ -174,6 +142,38 @@ function insertPortfolioAndModal(topicData) {
 
     document.getElementById("the-content-zone").innerHTML = "";
     document.getElementById("the-content-zone").insertAdjacentHTML("afterbegin", portfolioHtml);
+}
+
+function addTopicToNavBar(topic) {
+    const navbarHtml = `
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link" id="${topic.topic}" onclick="addTopicToUi(this.id)" href="#${topic.topic}">${topic.topic}</a>
+        </li>
+        `;
+    document.getElementById("quiz-navbar").insertAdjacentHTML("afterbegin", navbarHtml);
+    tileView(topic);
+}
+
+function tileView(topic) {
+    const topicName = topic.topic
+    const imageSrc = topic.image
+
+    const tileHtml = `                
+    <div class="col-md-6 col-lg-4 mb-5">
+        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" id="${topic.topic}" onclick="addTopicToUi(this.id)">
+                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            </div><img class="img-fluid" src="${imageSrc}" alt="${topicName}"/>
+        </div>
+    </div>`
+
+    document.getElementById("tileViewContainer").insertAdjacentHTML("afterbegin", tileHtml);
+}
+
+function addTopicToUi(topicName) {
+    doHttpGet(`/gettopic?topic=${encodeURIComponent(topicName)}`, function (topics) {
+        const topicData = topics[0];
+        insertPortfolioAndModal(topicData);
+    });
 }
 
 doHttpGet("/gettopiclist", function (topicList) {
