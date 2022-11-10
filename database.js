@@ -12,11 +12,10 @@ const INSERT_TIME_METRIC = "INSERT INTO TimeMetrics VALUES (?, ?)";
 
 //Result Metrics queries
 const CREATE_RESULT_METRICS_SCHEMA = "CREATE TABLE IF NOT EXISTS ResultMetrics (topic TEXT, question TEXT, userID TEXT, correctOrNot BOOL, mostRecent BOOl)"
-const GET_NUMBER_OF_CORRECT_ANSWERS_FOR_QUESTION = "SELECT COUNT(*) FROM ResultMetrics WHERE topic = ? AND question = ? AND mostRecent = true";
-const GET_OVERALL_RESULTS_FOR_TOPIC_ANONYMOUS = "SELECT topic, COUNT(*) FROM ResultMetrics WHERE correctOrNot = true AND mostRecent = true GROUP BY userID";
 const INVALIDATE_PREVIOUS_ATTEMPTS = "UPDATE ResultMetrics SET mostRecent = false WHERE userID = ? AND topic = ?";
 const INSERT_NEW_ATTEMPT = "INSERT INTO ResultMetrics VALUES(?, ?, ?, ?, ?)";
 
+//Create Tables
 db.exec(CREATE_QUIZ_SCHEMA);
 db.exec(CREATE_TIME_METRICS_SCHEMA);
 db.exec(CREATE_RESULT_METRICS_SCHEMA);
@@ -58,4 +57,15 @@ function getAllQuizTopics() {
     return db.prepare(GET_ALL_QUIZ_TOPICS).all();
 }
 
-module.exports = {getAllQuizQuestionsForTopic, getAllQuizQuestions, getAllQuizTopics, addTopicVisitEvent, updateQuizResults};
+function getUserResults() {
+
+}
+
+module.exports = {
+    getAllQuizQuestionsForTopic,
+    getAllQuizQuestions,
+    getAllQuizTopics,
+    addTopicVisitEvent,
+    updateQuizResults,
+    getUserResults
+};

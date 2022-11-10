@@ -12,6 +12,12 @@ app.get("/", (req, res) => {
     res.redirect("/index.html");
 });
 
+app.get("/userresult", (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    let resultsData = database.getUserResults(req.query.userID);
+    res.end(JSON.stringify(resultsData));
+});
+
 app.get("/quizresult", (req, res) => {
     const results = JSON.parse(req.query.result);
     database.updateQuizResults(results);

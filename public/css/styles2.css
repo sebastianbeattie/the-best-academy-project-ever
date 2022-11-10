@@ -6,4 +6,15 @@
 
 .btn-primary {
     background-color: #222;
+    border: 2px solid #b80000;
+}
+
+.btn-primary:hover {
+    background-color: #b80000;
+    border: 2px solid #b80000;
+}
+
+.btn-primary:focus {
+    background-color: #b80000;
+    border: 2px solid #b80000;
 }
