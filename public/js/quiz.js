@@ -7,6 +7,12 @@ function getUserId() {
     return userID;
 }
 
+function showModal(title, content) {
+    document.getElementById("modal-title").innerHTML = title;
+    document.getElementById("modal-content").innerHTML = content;
+    $('#modal').modal();
+}
+
 function doHttpGet(url, callback) {
     var xhr = new XMLHttpRequest();
 
@@ -45,7 +51,7 @@ function getQuestionList(topic) {
     const questionCount = getQuestionCount(topic);
     var questionList = [];
     for (var i = 0; i < questionCount; i++) {
-        questionList.push(document.getElementById(`portfolioModal${i}${topic}`));
+        questionList.push(document.getElementById(`questionContainer-${i}-${topic}`));
     }
     return questionList;
 }
@@ -73,28 +79,32 @@ function getScore(topic) {
 function submitAnswers(submitButton) {
     const topicName = submitButton.id.split("-")[1];
     if (!allQuestionsAreAnswered(topicName)) {
-        window.alert("Go and answer the questions or Nat will be unhappy");
+        showModal("You need to finish the quiz first!", "Go and answer the questions or Nat will be unhappy");
     } else {
         const score = getScore(topicName);
         doHttpGet(`/quizresult?result=${encodeURIComponent(JSON.stringify(score))}`, function (response) {
-            window.alert(`You got ${score.score} out of ${score.total}`);
+            showModal("Quiz Results", `You got ${score.score} out of ${score.total}`);
         });
     }
 }
 
-function checkAnswer(button) {
-    const buttonIdParts = button.id.split("-");
+function checkAnswer(buttonId) {
+    const buttonIdParts = buttonId.split("-");
     const topic = buttonIdParts[0];
     const question = buttonIdParts[1];
     const answer = buttonIdParts[2];
     var image = document.getElementById(`image${question}${topic}`);
+    var questionContainer = document.getElementById(`questionContainer-${question}-${topic}`);
+    if (questionContainer.classList.contains("answered")) return;
     var response = document.getElementById(`response${question}${topic}`);
     if (confirmAnswer(topic, question, answer)) {
         image.src = "img/happy_dg.png";
         response.innerHTML = "You got it right! Super Groovy";
+        questionContainer.classList.add("correct");
     } else {
         image.src = "img/disappointed_dg.png";
-        response.innerHTML = "You got it wrong! Nat would like a word with you";;
+        response.innerHTML = "You got it wrong! Nat would like a word with you";
+        questionContainer.classList.add("incorrect");
     }
     image.classList.remove("hidden");
     questionContainer.classList.add("answered");
@@ -125,20 +135,24 @@ function insertPortfolioAndModal(topicData) {
     for (var questionindex = 0; questionindex < questions.length; questionindex++) {
         var questionData = questions[questionindex];
         portfolioHtml += `
-        <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Question ${questionindex + 1}</h2>
-        <img class="img-fluid rounded mb-5 hidden" alt="A lovely image goes here" id="image${questionindex}${topicName}"/>
-        <p class="main-text" id="response${questionindex}${topicName}"></p>
+        <div class="container mb-5">
+        <h2 class="page-section-heading text-secondary d-inline-block" id="questionContainer-${questionindex}-${topicName}">Question ${questionindex + 1}</h2>
+        <div class="container">
+        <img class="img-fluid rounded hidden" alt="A lovely image goes here" id="image${questionindex}${topicName}"/>
+        <p class="main-text mb-0" id="response${questionindex}${topicName}"></p>
+        </div>
         <p class="main-text">${questionData.question}</p>
         `;
         for (var answerIndex = 0; answerIndex < questionData.answers.length; answerIndex++) {
             portfolioHtml += `
-            <button id="${topicName}-${questionindex}-${answerIndex + 1}" class="btn btn-primary" onclick=checkAnswer(this)>${questionData.answers[answerIndex]}</button>
+            <button id="${topicName}-${questionindex}-${answerIndex + 1}" class="btn btn-primary" onclick=checkAnswer(this.id)>${questionData.answers[answerIndex]}</button>
             `
         }
+        portfolioHtml += "</div>";
     }
 
     portfolioHtml += `
-    <button type="button" class="btn btn-success" onclick="submitAnswers(this)" id="submit-${topicName}">Submit</button>
+    <button type="button" class="btn btn-success" onclick="submitAnswers(this)" id="submit-${topicName}" data-target="modal">Submit</button>
     `
 
     document.getElementById("the-content-zone").innerHTML = "";

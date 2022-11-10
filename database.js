@@ -10,6 +10,8 @@ const GET_ALL_QUIZ_TOPICS = "SELECT topic FROM QuizData";
 const CREATE_TIME_METRICS_SCHEMA = "CREATE TABLE IF NOT EXISTS TimeMetrics (topic TEXT, dateTime TEXT)";
 const INSERT_TIME_METRIC = "INSERT INTO TimeMetrics VALUES (?, ?)";
 
+//SELECT topic, COUNT(*) FROM TimeMetrics GROUP BY topic ORDER BY COUNT(*) DESC
+
 //Result Metrics queries
 const CREATE_RESULT_METRICS_SCHEMA = "CREATE TABLE IF NOT EXISTS ResultMetrics (topic TEXT, question TEXT, userID TEXT, correctOrNot BOOL, mostRecent BOOl)"
 const INVALIDATE_PREVIOUS_ATTEMPTS = "UPDATE ResultMetrics SET mostRecent = false WHERE userID = ? AND topic = ?";
