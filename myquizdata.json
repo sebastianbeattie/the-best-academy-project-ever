@@ -3,6 +3,7 @@
 			"topic": "History",
 			"quizquestions": [{
 					"question": "Which Roman Emperor did Vespasian succeed?",
+					"difficulty": "beginner",
 					"answers": [
 						"Vitellius",
 						"Julius",
@@ -12,6 +13,7 @@
 				},
 				{
 					"question": "What is the name of the distinctive red pottery found on roman sites?",
+					"difficulty": "beginner",
 					"answers": [
 						"Ruby glass",
 						"Samian ware",
@@ -21,6 +23,7 @@
 				},
 				{
 					"question": "In which year did the Second World War begin?",
+					"difficulty": "beginner",
 					"answers": [
 						"1938",
 						"1939",
@@ -30,6 +33,7 @@
 				},
 				{
 					"question": "In which year did Queen Elizabth II ascend the British Throne?",
+					"difficulty": "beginner",
 					"answers": [
 						"1952",
 						"1955",
@@ -39,10 +43,66 @@
 				},
 				{
 					"question": "In which year did William of Normandy conquer England?",
+					"difficulty": "beginner",
 					"answers": [
 						"1122",
 						"1075",
 						"1066"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "In which European country was there a civil war between 1946 and 1949?",
+					"difficulty": "expert",
+					"answers": [
+						"Spain",
+						"Albania",
+						"Poland",
+						"Greece"
+					],
+					"correct_answer": 4
+				},
+				{
+					"question": "Which country was the first to give women the right to vote, in 1893?",
+					"difficulty": "expert",
+					"answers": [
+						"Australia",
+						"New Zealand",
+						"Germany",
+						"Belgium"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "In which year was Joan of Arc burned at the stake?",
+					"difficulty": "expert",
+					"answers": [
+						"1431",
+						"1425",
+						"1510",
+						"1456"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "Which country was previously known as the Dutch East Indies?",
+					"difficulty": "expert",
+					"answers": [
+						"Vietnam",
+						"Laos",
+						"Indonesia",
+						"Malaysia"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "What year did the Titanic sink?",
+					"difficulty": "expert",
+					"answers": [
+						"1910",
+						"1911",
+						"1912",
+						"1913"
 					],
 					"correct_answer": 3
 				}
@@ -52,6 +112,7 @@
 			"topic": "Geography",
 			"quizquestions": [{
 					"question": "which is the UK's second biggest city?",
+					"difficulty": "beginner",
 					"answers": [
 						"Glasgow",
 						"Cardiff",
@@ -61,6 +122,7 @@
 				},
 				{
 					"question": "Which is the UK's smallest shire?",
+					"difficulty": "beginner",
 					"answers": [
 						"Renfrewshire",
 						"Diddyshire",
@@ -70,6 +132,7 @@
 				},
 				{
 					"question": "What is the largest country in South America?",
+					"difficulty": "beginner",
 					"answers": [
 						"Brazil",
 						"Argentina",
@@ -79,6 +142,7 @@
 				},
 				{
 					"question": "What is the capital city of Egypt?",
+					"difficulty": "beginner",
 					"answers": [
 						"Alexandria",
 						"Cairo",
@@ -88,10 +152,66 @@
 				},
 				{
 					"question": "Which river flows through the city of Budapest?",
+					"difficulty": "beginner",
 					"answers": [
 						"Seine",
 						"Danube",
 						"Mersey"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "Brazil shares a border with every South American country, bar two. Can you name them?",
+					"difficulty": "expert",
+					"answers": [
+						"Ecuador and Peru",
+						"Ecuador and Chile",
+						"Guyana and Venezuela",
+						"Uruguay and Argentina"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "Byblos is often noted as one of the world’s most ancient cities. Where would you find it?",
+					"difficulty": "expert",
+					"answers": [
+						"Lebanon",
+						"Morocco",
+						"Iran",
+						"Jordan"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "UNESCO protects the world’s most important sites. How many World Heritage Sites have they inscribed?",
+					"difficulty": "expert",
+					"answers": [
+						"650",
+						"972",
+						"1121",
+						"1756"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "In Iceland, you can walk across two tectonic plates, side by side. Which ones?",
+					"difficulty": "expert",
+					"answers": [
+						"Eurasian and Arctic",
+						"Eurasian and Antarctic",
+						"Arctic and North American",
+						"Eurasian and North American"
+					],
+					"correct_answer": 4
+				},
+				{
+					"question": "What is the name (and location) of the world’s deepest lake?",
+					"difficulty": "expert",
+					"answers": [
+						"Vostok, Antarctica",
+						"Baikal, Russia",
+						"Issyk-Kul, Kyrgyzstan",
+						"Tanganyika, Africa"
 					],
 					"correct_answer": 2
 				}
@@ -102,6 +222,7 @@
 			"topic": "Politics",
 			"quizquestions": [{
 					"question": "Who was the first female Prime Minister of the United Kingdom?",
+					"difficulty": "beginner",
 					"answers": [
 						"Margaret Thatcher",
 						"Theresa May",
@@ -111,6 +232,7 @@
 				},
 				{
 					"question": "In which year was President John F Kennedy assassinated?",
+					"difficulty": "beginner",
 					"answers": [
 						"1961",
 						"1963",
@@ -120,6 +242,7 @@
 				},
 				{
 					"question": "Who is the current leader of the Labour Party?",
+					"difficulty": "beginner",
 					"answers": [
 						"Jeremy Corbyn",
 						"Gordon Brown",
@@ -129,6 +252,7 @@
 				},
 				{
 					"question": "Who was the 45th President of the United States?",
+					"difficulty": "beginner",
 					"answers": [
 						"Donald Trump",
 						"Barack Obama",
@@ -138,12 +262,68 @@
 				},
 				{
 					"question": "Who is the current Mayor of London?",
+					"difficulty": "beginner",
 					"answers": [
 						"Boris Johnson",
 						"Andy Burnham",
 						"Sadiq Khan"
 					],
 					"correct_answer": 3
+				},
+				{
+					"question": "When did Angela Merkel first become chancellor of Germany?",
+					"difficulty": "expert",
+					"answers": [
+						"2002",
+						"2003",
+						"2004",
+						"2005"
+					],
+					"correct_answer": 4
+				},
+				{
+					"question": "Which politician described Russia as “a riddle, wrapped in a mystery, inside an enigma”?",
+					"difficulty": "expert",
+					"answers": [
+						"Winston Churchill",
+						"Richard Nixon",
+						"Margaret Thatcher",
+						"John F Kennedy"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "Who was the only British Prime Minister to be assassinated?",
+					"difficulty": "expert",
+					"answers": [
+						"Bonar Law",
+						"Spencer Perceval",
+						"Stanley Baldwin",
+						"Ramsay MacDonald"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "How long does Prime Minister's Questions last?",
+					"difficulty": "expert",
+					"answers": [
+						"15 minutes",
+						"20 minutes",
+						"30 minutes",
+						"60 minutes"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "Which US president said, “Ask not what your country can do for you – ask what you can do for your country”?",
+					"difficulty": "expert",
+					"answers": [
+						"Harry S. Truman",
+						"Dwight D. Eisenhower",
+						"Lyndon B. Johnson",
+						"John F. Kennedy"
+					],
+					"correct_answer": 4
 				}
 
 			]
@@ -152,6 +332,7 @@
 			"topic": "Conservation",
 			"quizquestions": [{
 					"question": "Who is the host of Blue Planet?",
+					"difficulty": "beginner",
 					"answers": [
 						"Danny Dyer",
 						"David Attenborough",
@@ -161,6 +342,7 @@
 				},
 				{
 					"question": "Where is the 2022 United Nations Climate Change Conference (COP27) being held?",
+					"difficulty": "beginner",
 					"answers": [
 						"Egypt",
 						"U.S.A",
@@ -170,6 +352,7 @@
 				},
 				{
 					"question": "How many hectares of primary (old growth) forest are lost each year around the world?",
+					"difficulty": "beginner",
 					"answers": [
 						"Two Million",
 						"Four Million",
@@ -179,6 +362,7 @@
 				},
 				{
 					"question": " How many acres of rainforest are estimated to be lost every second?",
+					"difficulty": "beginner",
 					"answers": [
 						"One acre",
 						"One and a half acres",
@@ -188,12 +372,68 @@
 				},
 				{
 					"question": "What percentage of the world's fish stocks are either fully exploited or depleted?",
+					"difficulty": "beginner",
 					"answers": [
 						"50%",
 						"60%",
 						"70%"
 					],
 					"correct_answer": 3
+				},
+				{
+					"question": "Which of the following is the national mammal of the United States?",
+					"difficulty": "expert",
+					"answers": [
+						"American Bison",
+						"Grizzly Bear",
+						"Bald Eagle",
+						"Moose"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "Approximately how many muscles are there in a trunk of an elephant?",
+					"difficulty": "expert",
+					"answers": [
+						"5000",
+						"10,000",
+						"20,000",
+						"40,000"
+					],
+					"correct_answer": 4
+				},
+				{
+					"question": "Approximately how many eggs can a sea turtle lay at one time?",
+					"difficulty": "expert",
+					"answers": [
+						"60",
+						"120",
+						"240",
+						"480"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "Which of the following is the only bird species that can fly backwards?",
+					"difficulty": "expert",
+					"answers": [
+						"Hummingbird",
+						"Kingfisher",
+						"Scarlet Robin",
+						"Spotted Pardalote"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "What is the colour of a polar bear’s skin?",
+					"difficulty": "expert",
+					"answers": [
+						"White",
+						"Black",
+						"Pink",
+						"Brown"
+					],
+					"correct_answer": 2
 				}
 
 			]
@@ -202,6 +442,7 @@
 			"topic": "Celebrities",
 			"quizquestions": [{
 					"question": "Who is the host of BBC's Match of the Day?",
+					"difficulty": "beginner",
 					"answers": [
 						"Danny Dyer",
 						"David Attenborough",
@@ -211,6 +452,7 @@
 				},
 				{
 					"question": "Which artist recently released their new album 'Her Loss'?",
+					"difficulty": "beginner",
 					"answers": [
 						"Drake",
 						"Skepta",
@@ -220,6 +462,7 @@
 				},
 				{
 					"question": "Who played the character of Jason Bourne in the Bourne film series?",
+					"difficulty": "beginner",
 					"answers": [
 						"Brad Pitt",
 						"Johnny Depp",
@@ -229,6 +472,7 @@
 				},
 				{
 					"question": "Who starred as Jon Snow in the television series 'Game of Thrones'?",
+					"difficulty": "beginner",
 					"answers": [
 						"Kit Harington",
 						"Peter Dinklage",
@@ -238,12 +482,68 @@
 				},
 				{
 					"question": "Who hosts BBC's gameshow 'The Wheel'?",
+					"difficulty": "beginner",
 					"answers": [
 						"Danny Dyer",
 						"Michael McIntyre",
 						"Bradley Walsh"
 					],
 					"correct_answer": 2
+				},
+				{
+					"question": "How many GRAMMYs did Adele win in 2017 for her album 25?",
+					"difficulty": "expert",
+					"answers": [
+						"3",
+						"4",
+						"5",
+						"6"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "How many times was Leonardo DiCaprio nominated for an Academy Award before he eventually won one?",
+					"difficulty": "expert",
+					"answers": [
+						"4",
+						"6",
+						"8",
+						"10"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "What year did Geri Halliwell leave the Spice Girls?",
+					"difficulty": "expert",
+					"answers": [
+						"1997",
+						"1998",
+						"1999",
+						"2000"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "In which year was Tom Hanks born?",
+					"difficulty": "expert",
+					"answers": [
+						"1953",
+						"1954",
+						"1955",
+						"1956"
+					],
+					"correct_answer": 4
+				},
+				{
+					"question": "In which country was Mila Kunis born?",
+					"difficulty": "expert",
+					"answers": [
+						"Russia",
+						"USA",
+						"Ukraine",
+						"Canada"
+					],
+					"correct_answer": 3
 				}
 
 			]
@@ -252,6 +552,7 @@
 			"topic": "Law",
 			"quizquestions": [{
 					"question": "What name is given to the Scottish equivalent of a barrister in England and Wales?",
+					"difficulty": "beginner",
 					"answers": [
 						"Advocate",
 						"Affadavit",
@@ -261,6 +562,7 @@
 				},
 				{
 					"question": "Under the UK Gambling Act of 2005, lottery tickets may be bought only by people of at least what age?",
+					"difficulty": "beginner",
 					"answers": [
 						"15",
 						"16",
@@ -270,6 +572,7 @@
 				},
 				{
 					"question": "The Central Criminal Court of England and Wales is commonly known by what name?",
+					"difficulty": "beginner",
 					"answers": [
 						"The Old Bailey",
 						"Big Ben",
@@ -279,6 +582,7 @@
 				},
 				{
 					"question": "In which Asian country has a chewing gum sales ban been in place since 1992?",
+					"difficulty": "beginner",
 					"answers": [
 						"Vietnam",
 						"Japan",
@@ -288,12 +592,68 @@
 				},
 				{
 					"question": "What is the age of criminal responsibility in England and Wales?",
+					"difficulty": "beginner",
 					"answers": [
 						"10",
 						"12",
 						"14"
 					],
 					"correct_answer": 1
+				},
+				{
+					"question": "How old was Pablo Escobar when he was killed by the Colombian National Police?",
+					"difficulty": "expert",
+					"answers": [
+						"39",
+						"42",
+						"44",
+						"47"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "In which year was the Education Act passed into UK law?",
+					"difficulty": "expert",
+					"answers": [
+						"1860",
+						"1870",
+						"1880",
+						"1890"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "Who is the current Attorney General for England and Wales?",
+					"difficulty": "expert",
+					"answers": [
+						"Suella Braverman",
+						"Michael Ellis",
+						"Victoria Prentis",
+						"Geoffrey Cox"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "In which year was The National Health Service Act passed into UK law?",
+					"difficulty": "expert",
+					"answers": [
+						"1938",
+						"1946",
+						"1952",
+						"1956"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "Who is the current Attorney General of the USA?",
+					"difficulty": "expert",
+					"answers": [
+						"William Barr",
+						"Jeff Sessions",
+						"Loretta Lynch",
+						"Merrick Garland"
+					],
+					"correct_answer": 4
 				}
 
 			]
@@ -302,6 +662,7 @@
 			"topic": "Sport",
 			"quizquestions": [{
 					"question": "Who has made the most appearances in the Premier League?",
+					"difficulty": "beginner",
 					"answers": [
 						"Gary Neville",
 						"Gareth Barry",
@@ -311,6 +672,7 @@
 				},
 				{
 					"question": "In which year did Roger Federer win his first Wimbledon title?",
+					"difficulty": "beginner",
 					"answers": [
 						"2001",
 						"2002",
@@ -320,6 +682,7 @@
 				},
 				{
 					"question": "England won the 2003 Rugby World Cup thanks to an iconic drop goal from Jonny Wilkinson. How many points did England score in the match?",
+					"difficulty": "beginner",
 					"answers": [
 						"18",
 						"19",
@@ -329,6 +692,7 @@
 				},
 				{
 					"question": "In American Football, how many points do you score for a touchdown?",
+					"difficulty": "beginner",
 					"answers": [
 						"5",
 						"6",
@@ -338,10 +702,66 @@
 				},
 				{
 					"question": "In which year did England manager Gareth Southgate hit the headlines for missing an important penalty against Germany?",
+					"difficulty": "beginner",
 					"answers": [
 						"1990",
 						"1996",
 						"1998"
+					],
+					"correct_answer": 2
+				},
+				{
+					"question": "What are the two national sports of Canada?",
+					"difficulty": "expert",
+					"answers": [
+						"Basketball and Ice Hockey",
+						"Basketball and Football",
+						"Lacrosse and Football",
+						"Lacrosse and Ice Hockey"
+					],
+					"correct_answer": 4
+				},
+				{
+					"question": "Which team won the first NBA game in 1946?",
+					"difficulty": "expert",
+					"answers": [
+						"The New York Knicks",
+						"The Boston Celtics",
+						"The Los Angeles Lakers",
+						"The Chicago Bulls"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "Which country has the most Olympic gold medals in swimming?",
+					"difficulty": "expert",
+					"answers": [
+						"Great Britain",
+						"Australia",
+						"USA",
+						"China"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "What is 3 strikes in a row called in bowling?",
+					"difficulty": "expert",
+					"answers": [
+						"a Turkey",
+						"an Eagle",
+						"a Birdie",
+						"a Moose"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "Of all the fighting sports below, which sport was not practised by Bruce Lee?",
+					"difficulty": "expert",
+					"answers": [
+						"Boxing",
+						"Wushu",
+						"Jeet Kune Do",
+						"Fencing"
 					],
 					"correct_answer": 2
 				}
