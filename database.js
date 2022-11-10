@@ -16,7 +16,7 @@ const INSERT_TIME_METRIC = "INSERT INTO TimeMetrics VALUES (?, ?)";
 const CREATE_RESULT_METRICS_SCHEMA = "CREATE TABLE IF NOT EXISTS ResultMetrics (topic TEXT, difficulty TEXT, question TEXT, userID TEXT, correctOrNot BOOL, mostRecent BOOl)"
 const INVALIDATE_PREVIOUS_ATTEMPTS = "UPDATE ResultMetrics SET mostRecent = false WHERE userID = ? AND topic = ?";
 const INSERT_NEW_ATTEMPT = "INSERT INTO ResultMetrics VALUES(?, ?, ?, ?, ?, ?)";
-const GET_LEADERBOARD_FOR_TOPIC_AND_DIFFICULTY = "SELECT topic, userID, difficulty, COUNT(*) FROM ResultMetrics WHERE mostRecent = true AND correctOrNot = true AND LOWER(topic) = LOWER(?) AND difficulty = ? GROUP BY userID, topic, difficulty ORDER BY COUNT(*) DESC";
+const GET_LEADERBOARD_FOR_TOPIC_AND_DIFFICULTY = "SELECT topic, userID, difficulty, COUNT(*) FROM ResultMetrics WHERE correctOrNot = true AND LOWER(topic) = LOWER(?) AND difficulty = ? GROUP BY userID, topic, difficulty ORDER BY COUNT(*) DESC";
 
 //Create Tables
 db.exec(CREATE_QUIZ_SCHEMA);
