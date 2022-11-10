@@ -174,7 +174,7 @@ function tileView(topic) {
     const imageSrc = topic.image
 
     const tileHtml = `                
-    <div class="col-md-6 col-lg-4 mb-5">
+    <div class="col-md-4 col-lg-3 mb-5">
         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" id="${topic.topic}" onclick="addTopicToUi(this.id)">
                 <div class="portfolio-item-caption-content text-center text-white">${topicName}</i></div>
