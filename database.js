@@ -77,5 +77,6 @@ module.exports = {
     getAllQuizTopics,
     addTopicVisitEvent,
     updateQuizResults,
-    getLeaderboardForTopicAndDifficulty
+    getLeaderboardForTopicAndDifficulty,
+    boolToInt
 };
