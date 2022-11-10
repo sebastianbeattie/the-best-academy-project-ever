@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const database = require("./database");
-var morgan = require('morgan')
+var morgan = require('morgan');
 
 const port = 3000;
 

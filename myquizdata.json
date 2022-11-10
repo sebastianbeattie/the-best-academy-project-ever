@@ -1,7 +1,10 @@
 {
-	"quiz": [{
+	"quiz": [
+		{
 			"topic": "History",
-			"quizquestions": [{
+			"background": "img/history.jpg",
+			"quizquestions": [
+				{
 					"question": "Which Roman Emperor did Vespasian succeed?",
 					"difficulty": "beginner",
 					"answers": [
@@ -110,7 +113,9 @@
 		},
 		{
 			"topic": "Geography",
-			"quizquestions": [{
+			"background": "img/geography.jpg",
+			"quizquestions": [
+				{
 					"question": "which is the UK's second biggest city?",
 					"difficulty": "beginner",
 					"answers": [
@@ -215,12 +220,13 @@
 					],
 					"correct_answer": 2
 				}
-
 			]
 		},
 		{
 			"topic": "Politics",
-			"quizquestions": [{
+			"background": "img/politics.jpg",
+			"quizquestions": [
+				{
 					"question": "Who was the first female Prime Minister of the United Kingdom?",
 					"difficulty": "beginner",
 					"answers": [
@@ -325,12 +331,13 @@
 					],
 					"correct_answer": 4
 				}
-
 			]
 		},
 		{
 			"topic": "Conservation",
-			"quizquestions": [{
+			"background": "img/conservation.jpg",
+			"quizquestions": [
+				{
 					"question": "Who is the host of Blue Planet?",
 					"difficulty": "beginner",
 					"answers": [
@@ -435,12 +442,13 @@
 					],
 					"correct_answer": 2
 				}
-
 			]
 		},
 		{
 			"topic": "Celebrities",
-			"quizquestions": [{
+			"background": "img/celebrities.jpg",
+			"quizquestions": [
+				{
 					"question": "Who is the host of BBC's Match of the Day?",
 					"difficulty": "beginner",
 					"answers": [
@@ -545,12 +553,13 @@
 					],
 					"correct_answer": 3
 				}
-
 			]
 		},
 		{
 			"topic": "Law",
-			"quizquestions": [{
+			"background": "img/law.jpg",
+			"quizquestions": [
+				{
 					"question": "What name is given to the Scottish equivalent of a barrister in England and Wales?",
 					"difficulty": "beginner",
 					"answers": [
@@ -655,12 +664,13 @@
 					],
 					"correct_answer": 4
 				}
-
 			]
 		},
 		{
 			"topic": "Sport",
-			"quizquestions": [{
+			"background": "img/sport.jpg",
+			"quizquestions": [
+				{
 					"question": "Who has made the most appearances in the Premier League?",
 					"difficulty": "beginner",
 					"answers": [
@@ -765,7 +775,6 @@
 					],
 					"correct_answer": 2
 				}
-
 			]
 		}
 	]

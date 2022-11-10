@@ -1,8 +1,14 @@
-.main-nav-colour{background-color: #b80000;}
+.main-nav-colour {
+    background-color: #b80000;
+}
 
-.main-page{background-color: #EEEEEE;}
+.main-page {
+    background-color: #EEEEEE;
+}
 
-.main-text{color: #222;}
+.main-text {
+    color: #222;
+}
 
 .btn-primary {
     background-color: #222;
@@ -17,4 +23,8 @@
 .btn-primary:focus {
     background-color: #b80000;
     border: 2px solid #b80000;
+}
+
+.hidden {
+    display: none;
 }
