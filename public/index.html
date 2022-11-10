@@ -25,6 +25,15 @@
 <body id="page-top">
     <nav class="navbar navbar-expand-lg fixed-top main-nav-colour" id="mainNav">
         <img src="img/bbc_logo_inverted.png" height="8%" width="8%">
+
+        <div class="container">
+            <label for="cars">Difficulty:</label>
+            <select name="cars" id="cars" onchange="updateDifficulty(this)">
+                <option value="beginner">Beginner</option>
+                <option value="expert">Expert</option>
+            </select>
+        </div>
+
         <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
             <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded"
                 type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -48,7 +57,7 @@
             <!-- Portfolio Grid Items-->
             <div id="tileViewContainer" class="row justify-content-center">
                 <!-- Portfolio Items-->
-                
+
             </div>
         </div>
     </section>

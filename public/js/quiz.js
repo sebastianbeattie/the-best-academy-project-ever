@@ -7,6 +7,21 @@ function getUserId() {
     return userID;
 }
 
+function updateDifficulty(selector) {
+    window.localStorage.setItem("difficulty", selector.value);
+    let currentTopic = window.localStorage.getItem("currentTopic");
+    if (currentTopic != undefined) addTopicToUi(currentTopic);
+}
+
+function getDifficulty() {
+    let difficulty = window.localStorage.getItem("difficulty");
+    if (difficulty == undefined) {
+        difficulty = "beginner";
+        window.localStorage.setItem("difficulty", difficulty);
+    }
+    return difficulty;
+}
+
 function showModal(title, content) {
     document.getElementById("modal-title").innerHTML = title;
     document.getElementById("modal-content").innerHTML = content;
@@ -171,13 +186,15 @@ function tileView(topic) {
 }
 
 function addTopicToUi(topicName) {
-    doHttpGet(`/gettopic?topic=${encodeURIComponent(topicName)}`, function (topics) {
+    doHttpGet(`/gettopic?topic=${encodeURIComponent(topicName)}&difficulty=${encodeURIComponent(getDifficulty())}`, function (topics) {
         const topicData = topics[0];
+        window.localStorage.setItem("currentTopic", topicName);
         insertPortfolioAndModal(topicData);
     });
 }
 
 doHttpGet("/gettopiclist", function (topicList) {
+    window.localStorage.removeItem("currentTopic");
     for (topic of topicList) {
         addTopicToNavBar(topic); //API returns JSON array...
     }
