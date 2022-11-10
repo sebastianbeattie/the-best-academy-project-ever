@@ -1,6 +1,7 @@
 {
 	"quiz": [{
 			"topic": "History",
+			"background": "public/img/history.jpg",
 			"quizquestions": [{
 					"question": "Which Roman Emperor did Vespasian succeed?",
 					"answers": [
@@ -50,6 +51,7 @@
 		},
 		{
 			"topic": "Geography",
+			"background": "public/img/geography.jpg",
 			"quizquestions": [{
 					"question": "which is the UK's second biggest city?",
 					"answers": [
@@ -100,6 +102,7 @@
 		},
 		{
 			"topic": "Politics",
+			"background": "public/img/politics.jpg",
 			"quizquestions": [{
 					"question": "Who was the first female Prime Minister of the United Kingdom?",
 					"answers": [
@@ -150,6 +153,7 @@
 		},
 		{
 			"topic": "Conservation",
+			"background": "public/img/conservation.jpg",
 			"quizquestions": [{
 					"question": "Who is the host of Blue Planet?",
 					"answers": [
@@ -200,6 +204,7 @@
 		},
 		{
 			"topic": "Celebrities",
+			"background": "public/img/celebrities.jpg",
 			"quizquestions": [{
 					"question": "Who is the host of BBC's Match of the Day?",
 					"answers": [
@@ -250,6 +255,7 @@
 		},
 		{
 			"topic": "Law",
+			"background": "public/img/law.jpg",
 			"quizquestions": [{
 					"question": "What name is given to the Scottish equivalent of a barrister in England and Wales?",
 					"answers": [
@@ -300,6 +306,7 @@
 		},
 		{
 			"topic": "Sport",
+			"background": "public/img/sport.jpg",
 			"quizquestions": [{
 					"question": "Who has made the most appearances in the Premier League?",
 					"answers": [
