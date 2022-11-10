@@ -39,10 +39,12 @@ function addTopicVisitEvent(topic) {
     db.prepare(INSERT_TIME_METRIC).run(topic, dateTime);
 }
 
-function getAllQuizQuestionsForTopic(topic) {
+function getAllQuizQuestionsForTopicAndDifficulty(topic, difficulty) {
+    if (difficulty == undefined) difficulty = "beginner";
     let data = db.prepare(GET_QUESTIONS_FOR_TOPIC).all(topic);
     for (var i = 0; i < data.length; i++) {
-        data[i].questions = JSON.parse(data[i].questions);
+        let qData = JSON.parse(data[i].questions);
+        data[i].questions = qData.filter(q => q.difficulty == difficulty);
     }
     return data;
 }
@@ -64,7 +66,7 @@ function getUserResults() {
 }
 
 module.exports = {
-    getAllQuizQuestionsForTopic,
+    getAllQuizQuestionsForTopicAndDifficulty,
     getAllQuizQuestions,
     getAllQuizTopics,
     addTopicVisitEvent,
