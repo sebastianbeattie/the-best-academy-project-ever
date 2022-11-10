@@ -27,6 +27,7 @@ function boolToInt(bool) {
 }
 
 function updateQuizResults(results) {
+    console.log(results);
     db.prepare(INVALIDATE_PREVIOUS_ATTEMPTS).run(results.userID, results.topic);
 
     for (result of results.results) {

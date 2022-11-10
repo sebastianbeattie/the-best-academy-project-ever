@@ -195,6 +195,7 @@ function addTopicToUi(topicName) {
 
 doHttpGet("/gettopiclist", function (topicList) {
     window.localStorage.removeItem("currentTopic");
+    window.localStorage.setItem("difficulty", "beginner");
     for (topic of topicList) {
         addTopicToNavBar(topic); //API returns JSON array...
     }
