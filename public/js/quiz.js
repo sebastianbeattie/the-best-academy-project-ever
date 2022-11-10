@@ -8,15 +8,15 @@ function getUserId() {
 }
 
 function doHttpGet(url, callback) {
-   var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             callback(JSON.parse(xhr.responseText));
         }
     }
-   xhr.open("GET", url, true);
-   xhr.send();
+    xhr.open("GET", url, true);
+    xhr.send();
 }
 
 function addAnswerSheet(topic) {
@@ -24,7 +24,7 @@ function addAnswerSheet(topic) {
 
     for (var index = 0; index < topic.questions.length; index++) {
         var question = topic.questions[index];
-        answers.push({question: index, answer: question.correct_answer});
+        answers.push({ question: index, answer: question.correct_answer });
     }
 
     window.localStorage.setItem(topic.topic + "-answers", JSON.stringify(answers));
@@ -60,10 +60,10 @@ function allQuestionsAreAnswered(topic) {
 }
 
 function getScore(topic) {
-    var response = {topic: topic, score: 0, total: 0, userID: getUserId(), results: []};
+    var response = { topic: topic, score: 0, total: 0, userID: getUserId(), results: [] };
     var questionList = getQuestionList(topic);
     for (var i = 0; i < questionList.length; i++) {
-        response.results.push({question: i, correct: questionList[i].classList.contains("correct")});
+        response.results.push({ question: i, correct: questionList[i].classList.contains("correct") });
     }
     response.score = response.results.filter(r => r.correct).length;
     response.total = questionList.length;
@@ -114,7 +114,7 @@ function addTopicToNavBar(topic) {
 }
 
 function addTopicToUi(topicName) {
-    doHttpGet(`/gettopic?topic=${encodeURIComponent(topicName)}`, function(topics) {
+    doHttpGet(`/gettopic?topic=${encodeURIComponent(topicName)}`, function (topics) {
         const topicData = topics[0];
         insertPortfolioAndModal(topicData);
     });
@@ -142,8 +142,8 @@ function insertPortfolioAndModal(topicData) {
                     <!-- Portfolio Items-->
         `
 
-        for (var index = 0; index < questions.length; index++) {
-            portfolioHtml += `
+    for (var index = 0; index < questions.length; index++) {
+        portfolioHtml += `
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal${index}${topicName}">
                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -153,8 +153,8 @@ function insertPortfolioAndModal(topicData) {
                 </div>
             </div>
             `
-        }
-        portfolioHtml += `
+    }
+    portfolioHtml += `
                     <div class="container text-center">
                         <button type="button" class="btn btn-success" onclick="submitAnswers(this)" id="submit-${topicName}">Submit</button>
                     </div>
@@ -162,18 +162,18 @@ function insertPortfolioAndModal(topicData) {
             </div>
         </section>
         `;
-        var modalHtml = "";
-        for (var index = 0; index < questions.length; index++) {
-            const question = questions[index];
-            const questionText = question.question;
-            const answers = question.answers;
-            var modalButtons = ""
-            for (var answerIndex = 0; answerIndex < answers.length; answerIndex++) {
-                modalButtons += `
+    var modalHtml = "";
+    for (var index = 0; index < questions.length; index++) {
+        const question = questions[index];
+        const questionText = question.question;
+        const answers = question.answers;
+        var modalButtons = ""
+        for (var answerIndex = 0; answerIndex < answers.length; answerIndex++) {
+            modalButtons += `
                 <button id="${topicName}-${index}-${answerIndex + 1}" class="btn btn-primary" onclick=checkAnswer(this)>${answers[answerIndex]}</button>
                 `
-            }
-            modalHtml += `
+        }
+        modalHtml += `
             <div class="portfolio-modal modal fade" id="portfolioModal${index}${topicName}" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal${index}${topicName}Label" aria-hidden="true">
                 <div class="modal-dialog modal-xl" role="document">
                     <div class="modal-content">
@@ -210,13 +210,13 @@ function insertPortfolioAndModal(topicData) {
                 </div>
             </div>
             `;
-        }
-        document.getElementById("the-content-zone").innerHTML = "";
-        document.getElementById("the-content-zone").insertAdjacentHTML("afterbegin", portfolioHtml);
-        document.getElementById("the-content-zone").insertAdjacentHTML("beforeend", modalHtml);
+    }
+    document.getElementById("the-content-zone").innerHTML = "";
+    document.getElementById("the-content-zone").insertAdjacentHTML("afterbegin", portfolioHtml);
+    document.getElementById("the-content-zone").insertAdjacentHTML("beforeend", modalHtml);
 }
 
-doHttpGet("/gettopiclist", function(topicList) {
+doHttpGet("/gettopiclist", function (topicList) {
     for (topic of topicList) {
         addTopicToNavBar(topic.topic); //API returns JSON array...
     }
