@@ -1,7 +1,7 @@
 function getUserId() {
     let userID = window.localStorage.getItem("userID");
     if (userID == undefined) {
-        userID = crypto.randomUUID()
+        userID = "Anonymous";
         window.localStorage.setItem("userID", userID);
     }
     return userID;
@@ -223,6 +223,21 @@ function addTopicToUi(topicName) {
         insertPortfolioAndModal(topicData);
     });
 }
+
+document.getElementById("enter-nickname").addEventListener("keyup", (e) => {
+    if (e.code == "Enter") {
+        let nick = document.getElementById("enter-nickname").value.trim();
+        if (nick == "" || nick == "Anonymous") {
+            window.localStorage.setItem("userID", "Anonymous");
+            showModal("Nickname Updated", "Your nickname has been removed and you are now an anonymous user");
+        } else {
+            window.localStorage.setItem("userID", nick);
+            showModal("Nickname Updated", "Your nickname has been set to " + nick);
+        }
+    }
+});
+
+document.getElementById("enter-nickname").value = getUserId();
 
 doHttpGet("/gettopiclist", function (topicList) {
     window.localStorage.removeItem("currentTopic");

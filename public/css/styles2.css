@@ -2,6 +2,10 @@
     background-color: #b80000;
 }
 
+input[type=text] {
+    width: auto;
+}
+
 .main-page {
     background-color: #EEEEEE;
 }

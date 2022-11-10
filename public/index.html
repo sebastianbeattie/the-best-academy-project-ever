@@ -8,11 +8,6 @@
     <meta name="author" content="">
     <title>BBC quiz</title>
     <link rel="icon" type="image/png" href="img/bbc_logo_small.png">
-    <!-- Font Awesome icons (free version)-->
-    <link rel="preload" href="https://static.files.bbci.co.uk/fonts/reith/2.512/BBCReithSans_W_Rg.woff2" as="font"
-        type="font/woff2" crossorigin>
-    <link rel="preload" href="https://static.files.bbci.co.uk/fonts/reith/2.512/BBCReithSans_W_Bd.woff2" as="font"
-        type="font/woff2" crossorigin>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
         crossorigin="anonymous"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -27,10 +22,11 @@
         <img src="img/bbc_logo_inverted.png" height="8%" width="8%">
 
         <div class="container">
-            <select name="cars" id="cars" onchange="updateDifficulty(this)">
+            <select name="difficulty" id="difficulty" onchange="updateDifficulty(this)">
                 <option value="beginner">Beginner</option>
                 <option value="expert">Expert</option>
             </select>
+            <input type="text" placeholder="Nickname (Optional)" id="enter-nickname">
         </div>
 
         <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
