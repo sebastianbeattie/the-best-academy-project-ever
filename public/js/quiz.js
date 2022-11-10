@@ -104,22 +104,25 @@ function checkAnswer(button) {
     questionContainer.classList.add("answered");
 }
 
-function addTopicToUi(topic) {
+function addTopicToNavBar(topic) {
     doHttpGet(`/gettopic?topic=${encodeURIComponent(topic)}`, function(topic) {
         const topicData = topic[0];
         const topicName = topicData.topic;
-        const questions = topicData.questions;
-
-        addAnswerSheet(topicData);
-
         const navbarHtml = `
         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link js-scroll-trigger" href="#${topicName}">${topicName}</a>
         </li>
         `;
-
         document.getElementById("quiz-navbar").insertAdjacentHTML("afterbegin", navbarHtml);
+        //addTopicToUi(topic);
+    });
+}
 
-        var portfolioHtml = `
+function addTopicToUi(topic) {
+    const topicData = topic[0];
+    const topicName = topicData.topic;
+    const questions = topicData.questions;
+    addAnswerSheet(topicData);
+    var portfolioHtml = `
         <section class="page-section portfolio" id="${topicName}">
             <div class="container">
                 <!-- Portfolio Section Heading-->
@@ -210,11 +213,10 @@ function addTopicToUi(topic) {
 
         document.getElementById("quiz-container").insertAdjacentHTML("afterbegin", portfolioHtml);
         document.getElementById("quiz-container").insertAdjacentHTML("beforeend", modalHtml);
-    });
 }
 
 doHttpGet("/gettopiclist", function(topicList) {
     for (topic of topicList) {
-        addTopicToUi(topic.topic); //API returns JSON array...
+        addTopicToNavBar(topic.topic); //API returns JSON array...
     }
 });
