@@ -88,17 +88,13 @@ function checkAnswer(button) {
     const question = buttonIdParts[1];
     const answer = buttonIdParts[2];
     var image = document.getElementById(`image${question}${topic}`);
-    var questionContainer = document.getElementById(`portfolioModal${question}${topic}`);
-    if (questionContainer.classList.contains("answered")) return;
     var response = document.getElementById(`response${question}${topic}`);
     if (confirmAnswer(topic, question, answer)) {
         image.src = "img/happy_dg.png";
         response.innerHTML = "You got it right! Super Groovy";
-        questionContainer.classList.add("correct");
     } else {
         image.src = "img/disappointed_dg.png";
-        response.innerHTML = "You got it wrong! Nat would like a word with you";
-        questionContainer.classList.add("incorrect");
+        response.innerHTML = "You got it wrong! Nat would like a word with you";;
     }
     image.classList.remove("hidden");
     questionContainer.classList.add("answered");
@@ -124,96 +120,29 @@ function insertPortfolioAndModal(topicData) {
     const topicName = topicData.topic;
     const questions = topicData.questions;
     addAnswerSheet(topicData);
-    var portfolioHtml = `
-        <section class="page-section portfolio" id="${topicName}">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">${topicName}</h2>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Items-->
-        `
+    var portfolioHtml = "";
 
-    for (var index = 0; index < questions.length; index++) {
+    for (var questionindex = 0; questionindex < questions.length; questionindex++) {
+        var questionData = questions[questionindex];
         portfolioHtml += `
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal${index}${topicName}">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="portfolio-item-caption-content text-center text-white"><i"></i></div>
-                </div>
-                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Question ${index + 1}</h2>
-                </div>
-            </div>
-            `
-    }
-    portfolioHtml += `
-                    <div class="container text-center">
-                        <button type="button" class="btn btn-success" onclick="submitAnswers(this)" id="submit-${topicName}">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Question ${questionindex + 1}</h2>
+        <img class="img-fluid rounded mb-5 hidden" alt="A lovely image goes here" id="image${questionindex}${topicName}"/>
+        <p class="main-text" id="response${questionindex}${topicName}"></p>
+        <p class="main-text">${questionData.question}</p>
         `;
-    var modalHtml = "";
-    for (var index = 0; index < questions.length; index++) {
-        const question = questions[index];
-        const questionText = question.question;
-        const answers = question.answers;
-        var modalButtons = ""
-        for (var answerIndex = 0; answerIndex < answers.length; answerIndex++) {
-            modalButtons += `
-                <button id="${topicName}-${index}-${answerIndex + 1}" class="btn btn-primary" onclick=checkAnswer(this)>${answers[answerIndex]}</button>
-                `
+        for (var answerIndex = 0; answerIndex < questionData.answers.length; answerIndex++) {
+            portfolioHtml += `
+            <button id="${topicName}-${questionindex}-${answerIndex + 1}" class="btn btn-primary" onclick=checkAnswer(this)>${questionData.answers[answerIndex]}</button>
+            `
         }
-        modalHtml += `
-            <div class="portfolio-modal modal fade" id="portfolioModal${index}${topicName}" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal${index}${topicName}Label" aria-hidden="true">
-                <div class="modal-dialog modal-xl" role="document">
-                    <div class="modal-content">
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                        <div class="modal-body text-center">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-8">
-                                        <!-- Portfolio Modal - Title-->
-                                        <h2 class="portfolio-modal-title text-secondary mb-0">Question ${index + 1}</h2>
-                                        <!-- Icon Divider-->
-                                        <div class="divider-custom">
-                                            <div class="divider-custom-line"></div>
-                                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                            <div class="divider-custom-line"></div>
-                                        </div>
-                                        <!-- Portfolio Modal - Image-->
-                                        <img class="img-fluid rounded mb-5 hidden" alt="A lovely image goes here" id="image${index}${topicName}"/>
-                                        <p class="main-text" id="response${index}${topicName}"></p>
-                                        <!-- Portfolio Modal - Text-->
-                                        <p class="main-text">${questionText}</p>
-                                        <!-- Portfolio Modal - Buttons-->
-                                        ${modalButtons}
-                                        <!-- Portfolio Modal - Close Window-->
-                                        <br></br>
-                                        <div class="container">
-                                            <button class="btn btn-danger" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            `;
     }
+
+    portfolioHtml += `
+    <button type="button" class="btn btn-success" onclick="submitAnswers(this)" id="submit-${topicName}">Submit</button>
+    `
+
     document.getElementById("the-content-zone").innerHTML = "";
     document.getElementById("the-content-zone").insertAdjacentHTML("afterbegin", portfolioHtml);
-    document.getElementById("the-content-zone").insertAdjacentHTML("beforeend", modalHtml);
 }
 
 doHttpGet("/gettopiclist", function (topicList) {
