@@ -1,14 +1,8 @@
 {
     "name": "AcademyInjector",
     "description": "Nothing to see here...",
-    "version": "1.0",
+    "version": "69",
     "manifest_version": 3,
-    "permissions": [
-        "scripting",
-        "tabs",
-        "activeTab",
-        "storage"
-    ],
     "content_scripts": [
         {
             "matches": [
