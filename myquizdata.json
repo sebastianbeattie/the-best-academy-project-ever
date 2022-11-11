@@ -778,30 +778,39 @@
 			]
 		},
 		{
-		"topic": "D.G.",
-		"background": "img/director-general.jpg",
-		"quizquestions": [
-			{
-				"question": "What type of shoes does the BBC Director General wear?",
-				"difficulty": "beginner",
-				"answers": [
-					"Brogues",
-					"Crocs",
-					"Adidas Stan Smiths"
-				],
-				"correct_answer": 3
-			},
-			{
-				"question": "Who is the current Director General of the BBC?",
-				"difficulty": "beginner",
-				"answers": [
-					"Tim Davie",
-					"Sir John Reith",
-					"Mark Thompson"
-				],
-				"correct_answer": 1
-			}
-		]
-	}
+			"topic": "D.G.",
+			"background": "img/director-general.jpg",
+			"quizquestions": [
+				{
+					"question": "What type of shoes does the BBC Director General wear?",
+					"difficulty": "beginner",
+					"answers": [
+						"Brogues",
+						"Crocs",
+						"Adidas Stan Smiths"
+					],
+					"correct_answer": 3
+				},
+				{
+					"question": "Who is the current Director General of the BBC?",
+					"difficulty": "beginner",
+					"answers": [
+						"Tim Davie",
+						"Sir John Reith",
+						"Mark Thompson"
+					],
+					"correct_answer": 1
+				},
+				{
+					"question": "Is the DG disappointed?",
+					"difficulty": "expert",
+					"answers": [
+						"Yes",
+						"No"
+					],
+					"correct_answer": 1
+				}
+			]
+		}
 	]
 }
